@@ -1,15 +1,11 @@
 ﻿using System;
 namespace VoiceControl
 {
-    public abstract class AutoController : INamedCommandController
+    public abstract class AutoController : ICommandControllerDefinition
     {
 
         AutoExecuter autoExecuter = new AutoExecuter();
-     
-
-        public abstract string Name { get; }
-
-       
+           
         public void Start(Action action)
         {
             autoExecuter.Start(action);
@@ -17,9 +13,9 @@ namespace VoiceControl
 
         }
 
-        public virtual void Build(IBuilder builder)
+        public virtual void Build(ICommandBuilder builder)
         {
-           builder.Commands. AddCommand("stop", () => autoExecuter.Stop());
+           builder.AddCommand("stop", () => autoExecuter.Stop());
 
         }
     }

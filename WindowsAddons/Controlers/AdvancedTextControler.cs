@@ -6,17 +6,14 @@ using System.Windows.Forms;
 
 namespace VoiceControl
 {
-    public class AdvancedTextController : INamedCommandController
+    public class AdvancedTextController : ICommandControllerDefinition
     {
 
-        public string Name => "Text";
-
-        public void Build(IBuilder builder)
+        public void Build(ICommandBuilder builder)
         {
-            builder.Commands.AddStringCommand("German text(de-de)", v => SendKeys.SendWait(v))
+            builder.AddStringCommand("German text(de-de)", v => SendKeys.SendWait(v))
                .AddStringCommand("English text(en-us)", v => SendKeys.SendWait(v))
                .AddStringCommand("Find text(en-us)", v => SearchOnGoogle(v));
-
         }
 
         public void SearchOnGoogle(string keywordString)

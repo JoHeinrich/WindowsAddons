@@ -77,16 +77,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoScrollControler.cs" />
-    <Compile Include="Controlers\ActivationController.cs" />
+    <Compile Include="Controlers\AutoScrollControler.cs" />
     <Compile Include="Controlers\AdvancedTextControler.cs" />
     <Compile Include="Controlers\AutoControler.cs" />
     <Compile Include="Controlers\AutoExecuter.cs" />
     <Compile Include="Controlers\MouseControler.cs" />
-    <Compile Include="Controlers\NumberContoler.cs" />
     <Compile Include="Controlers\ProgramControler.cs" />
     <Compile Include="Controlers\ScrollControler.cs" />
-    <Compile Include="Controlers\SpeechControler.cs" />
     <Compile Include="Helpers\WindowInformation.cs" />
     <Compile Include="InformationProvider\CurrentWindowInformationProvider.cs" />
     <Compile Include="InformationProvider\FirefoxInformationProvider.cs" />

@@ -9,19 +9,17 @@ using WindowsInput;
 
 namespace VoiceControl
 {
-    class MouseController : INamedCommandController
+    class MouseController : ICommandControllerDefinition
     {
 
 
 
-        public string Name => "Mouse";
-
-        public void Build(IBuilder builder)
+        public void Build(ICommandBuilder builder)
         {
             InputSimulator inputSimulator = new InputSimulator();
 
             //addCommand(@"-[0-9]+|[0-9]+", () => Console.WriteLine("I"));
-            builder.Commands.AddCommand("click", () => inputSimulator.Mouse.LeftButtonClick())
+            builder.AddCommand("click", () => inputSimulator.Mouse.LeftButtonClick())
             .AddCommand("select", () =>
             {
                 inputSimulator.Keyboard.KeyDown(WindowsInput.Native.VirtualKeyCode.SHIFT);

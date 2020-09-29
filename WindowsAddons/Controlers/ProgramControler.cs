@@ -10,19 +10,17 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 namespace VoiceControl
 {
-    public class ProgramController : INamedCommandController
+    public class ProgramController : ICommandControllerDefinition
     {
         string path = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu) + "\\Programs";
 
-        public string Name => "program";
-
-        public void Build(IBuilder builder)
+        public void Build(ICommandBuilder builder)
         {
             var files = Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories).ToList();
             Dictionary<string, string> mapping = new Dictionary<string, string>();
 
             files.ForEach(x => mapping[Path.GetFileNameWithoutExtension(x)] = x);
-            builder.Commands.AddCommand(mapping.Keys.ToList(), s =>
+            builder.AddCommand(mapping.Keys.ToList(), s =>
             {
                 try
                 {

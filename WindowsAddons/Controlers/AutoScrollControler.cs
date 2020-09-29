@@ -1,17 +1,16 @@
 ﻿using WindowsInput;
 namespace VoiceControl
 {
-    public class AutoScrollController : AutoController
+    public class FloatController : AutoController
     {
-    
 
-        public override string Name => "Float";
 
-        public override void Build(IBuilder builder)
+        public override void Build(ICommandBuilder builder)
         {
             base.Build(builder);
 
-            builder.Commands.AddCommand("up", () => StartScrolling(1))
+            builder
+             .AddCommand("up", () => StartScrolling(1))
              .AddCommand("down", () => StartScrolling(-1));
 
         }

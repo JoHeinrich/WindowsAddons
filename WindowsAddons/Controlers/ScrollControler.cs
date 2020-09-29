@@ -8,17 +8,17 @@ using WindowsInput;
 namespace VoiceControl
 {
 
-    public class ScrollController : INamedCommandController
+    public class ScrollController : ICommandControllerDefinition
     {
         public ScrollController() 
         {
 
         }
 
-        public void Build(IBuilder builder)
+        public void Build(ICommandBuilder builder)
         {
             InputSimulator inputSimulator = new InputSimulator();
-            builder.Commands.AddCommand("up", () => inputSimulator.Mouse.VerticalScroll(5))
+            builder.AddCommand("up", () => inputSimulator.Mouse.VerticalScroll(5))
             .AddCommand("up number()", x => inputSimulator.Mouse.VerticalScroll(x))
             .AddCommand("down", () => inputSimulator.Mouse.VerticalScroll(-5))
             .AddCommand("down number()", x => inputSimulator.Mouse.VerticalScroll(-x));
