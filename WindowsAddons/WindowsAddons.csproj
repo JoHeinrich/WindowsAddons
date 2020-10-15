@@ -68,8 +68,7 @@
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="VoiceControlSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Visual Studio Projects\VoiceControl\VoiceControlCore\bin\Release\netstandard2.0\VoiceControlSDK.dll</HintPath>
+      <HintPath>..\packages\VoiceControlSDK.1.0.0\lib\netstandard2.0\VoiceControlSDK.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">

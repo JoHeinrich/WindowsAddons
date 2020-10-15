@@ -11,9 +11,9 @@ namespace VoiceControl
 
         public void Build(ICommandBuilder builder)
         {
-            builder.AddStringCommand("German text(de-de)", v => SendKeys.SendWait(v))
-               .AddStringCommand("English text(en-us)", v => SendKeys.SendWait(v))
-               .AddStringCommand("Find text(en-us)", v => SearchOnGoogle(v));
+            builder.AddCommand("German text(de-de)", v => SendKeys.SendWait(v))
+               .AddCommand("English text(en-us)", v => SendKeys.SendWait(v))
+               .AddCommand("Find text(en-us)", v => SearchOnGoogle(v));
         }
 
         public void SearchOnGoogle(string keywordString)
