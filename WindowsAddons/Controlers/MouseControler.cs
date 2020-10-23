@@ -9,7 +9,7 @@ using WindowsInput;
 
 namespace VoiceControl
 {
-    class MouseController : ICommandControllerDefinition
+    public class MouseController : ICommandControllerDefinition
     {
 
 
@@ -18,7 +18,6 @@ namespace VoiceControl
         {
             InputSimulator inputSimulator = new InputSimulator();
 
-            //addCommand(@"-[0-9]+|[0-9]+", () => Console.WriteLine("I"));
             builder.AddCommand("click", () => inputSimulator.Mouse.LeftButtonClick())
             .AddCommand("select", () =>
             {

@@ -6,9 +6,9 @@ namespace VoiceControl
 
         AutoExecuter autoExecuter = new AutoExecuter();
            
-        public void Start(Action action)
+        public void Start(Action action,int interval = 300)
         {
-            autoExecuter.Start(action);
+            autoExecuter.Start(action,interval);
        
 
         }

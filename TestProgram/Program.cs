@@ -11,6 +11,7 @@ namespace TestProgram
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.Load("WindowsAddons");
