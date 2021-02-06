@@ -11,11 +11,11 @@ namespace VoiceControl
     {
         public void Build(ICommandBuilder builder)
         {
-            builder.AddCommand("Google text()", v => SearchOnGoogle(v))
-                .AddCommand("Youtube text()", v => SearchOnYoutube(v))
-                .AddCommand("Windows text()", v => SearchonWindows(v));
+            builder.AddCommand("Google text(en-GB)", v => SearchOnGoogle(v))
+                .AddCommand("Youtube text(en-GB)", v => SearchOnYoutube(v))
+                .AddCommand("Windows text(en-GB)", v => SearchOnWindows(v));
         }
-        public static void SearchonWindows(string keyword)
+        public static void SearchOnWindows(string keyword)
         {
             InputSimulator inputSimulator = new InputSimulator();
             SendKeys.SendWait("^{ESC}"+keyword);
